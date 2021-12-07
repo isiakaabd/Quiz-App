@@ -2,6 +2,7 @@ import { AnswerObject } from './Questionnaire'
 import { Card, Typography, Grid } from '@mui/material'
 import CustomButton from 'Utilities/Button'
 import { useTheme } from '@mui/material/styles'
+import { parse } from 'node-html-parser'
 
 type Props = {
   loading: boolean
@@ -31,6 +32,7 @@ const QuestionCard: React.FC<Props> = ({
     hover: theme.palette.success.light,
     active: theme.palette.primary.light,
   }
+  const { firstChild } = parse(question)
 
   return (
     <Grid container width="90%" direction="column" margin="auto" gap={2}>
@@ -43,7 +45,7 @@ const QuestionCard: React.FC<Props> = ({
         <Card>
           <Grid item>
             <Typography variant="h6" gutterBottom>
-              {question}
+              {firstChild.text}
             </Typography>
           </Grid>
           <Grid item container direction="column" gap={2}>

@@ -174,6 +174,7 @@ const Questionnaire = () => {
               gap={2}
               margin="auto"
             >
+              {}
               <Grid item container gap={2}>
                 <Grid item container>
                   <Selects
