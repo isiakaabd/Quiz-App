@@ -1,24 +1,15 @@
 html,
 body {
   font-size: 62.5%;
-  font-family:  sans-serif;
+  font-family: sans-serif;
   scroll-behavior: smooth;
 }
 
 .App {
   text-align: center;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  overflow:hidden;
-  flex-direction:column
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #f3f3f3;
 }
-
-
-.App-logo {;
-  
-
-  height: 40vmin;
-  pointer-events: none;
-}
-

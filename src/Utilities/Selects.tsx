@@ -1,21 +1,21 @@
 import {
   MenuItem,
-  Grid,
   InputLabel,
   FormControl,
   Select,
+  Grid,
   SelectChangeEvent,
 } from '@mui/material'
+import { StateProp } from 'components/Questionnaire'
 
 type Props = {
-  state?: any
-  label?: string
-  options?: any
-  setState?: any
+  state: StateProp
+  label: string
+  options: any
+  setState: React.Dispatch<React.SetStateAction<StateProp>>
   formLabel?: string
-  name?: string
-  value?: string | undefined
-  initialState?: string
+  name: string
+  value?: string
 }
 
 const Selects: React.FC<Props> = ({
@@ -35,8 +35,8 @@ const Selects: React.FC<Props> = ({
   }
 
   return (
-    <Grid item>
-      <FormControl sx={{ m: 1, width: '300px' }} fullWidth>
+    <Grid item container>
+      <FormControl fullWidth>
         <InputLabel>{label}</InputLabel>
         <Select
           id={`${label} for ${name}`}

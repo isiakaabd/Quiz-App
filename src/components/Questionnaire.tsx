@@ -6,13 +6,14 @@ import Selects from 'Utilities/Selects'
 import { Typography, Grid } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CustomButton from 'Utilities/Button'
+import Circular from 'Utilities/Circular'
 export type AnswerObject = {
   question: string
   answer: string
   correct: boolean
   correctAnswer: string
 }
-type StateProp = {
+export type StateProp = {
   loading: boolean
   questions: any[]
   answers: any[]
@@ -38,7 +39,7 @@ const questionNo = [
   { value: 20, label: 20 },
   { value: 30, label: 30 },
 ]
-const challengeOption: Options = [
+const challengeOption: {}[] = [
   { label: 'Easy', value: 'easy' },
   { label: 'Hard', value: 'hard' },
   { label: 'Medium', value: 'medium' },
@@ -152,7 +153,6 @@ const Questionnaire = () => {
     <Grid container width="95%" direction="column" margin="auto" gap={2}>
       <Grid item container>
         <Typography variant="h1">
-          {' '}
           {questions.length > 0 ? 'Quiz Question' : "Let's get Started"}
         </Typography>
       </Grid>
@@ -182,7 +182,7 @@ const Questionnaire = () => {
                     setState={setstate}
                     options={options}
                     name="category"
-                    value={state.category}
+                    value={category}
                   />
                 </Grid>
                 <Grid item container>
@@ -191,7 +191,7 @@ const Questionnaire = () => {
                     state={state}
                     name="challenge"
                     setState={setstate}
-                    value={state.challenge}
+                    value={challenge}
                     options={challengeOption}
                   />
                 </Grid>
@@ -222,7 +222,7 @@ const Questionnaire = () => {
         questions.length > 0 && <Score score={score} />}
       {loading && (
         <Grid item container>
-          <Typography variant="h4">loading</Typography>
+          <Circular />
         </Grid>
       )}
       {!loading && !gameOver && questions.length > 0 ? (
