@@ -8,7 +8,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: '#fff',
-      dark: '#4F4F4F',
+      dark,
     },
     action: {
       disabledBackground: grey[300],
@@ -38,10 +38,6 @@ export const theme = createTheme({
         root: {
           '&:hover': {
             background: 'red',
-          },
-          '&:disabled': {
-            disabledBackground: grey[300],
-            disabled: dark,
           },
         },
       },

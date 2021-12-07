@@ -19,34 +19,33 @@ type Props = {
 
 const QuestionCard: React.FC<Props> = ({
   number,
-  gameOver,
   userAnswers,
   answers,
   TotalQuestion,
-  questions,
   question,
   handlePick,
-  answer,
 }) => {
   const theme = useTheme()
   const nextButton = {
     background: theme.palette.info.dark,
     hover: theme.palette.success.light,
     active: theme.palette.primary.light,
-    disable: 'green',
   }
-  console.log(2)
+
   return (
     <Grid container width="90%" direction="column" margin="auto" gap={2}>
-      <Grid>
-        <Typography variant="h6" textAlign="center">
-          {' '}
+      <Grid item container>
+        <Typography variant="h6" textAlign="center" gutterBottom>
           Questions: {number} / {TotalQuestion}
         </Typography>
       </Grid>
       <Grid item container md={4} sm={10} justifyContent="center">
         <Card>
-          <Typography variant="h6">{question}</Typography>
+          <Grid item>
+            <Typography variant="h6" gutterBottom>
+              {question}
+            </Typography>
+          </Grid>
           <Grid item container direction="column" gap={2}>
             {answers.map((answer) => (
               <Grid item key={answer}>

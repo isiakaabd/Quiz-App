@@ -39,13 +39,14 @@ const CustomButton: React.FC<PropTypes> = ({
     button: {
       '&.MuiButton-root': {
         fontSize: list ? '1.2rem' : '2rem',
-        backgroundColor:
-          list && correct
-            ? 'yellow'
-            : list && !correct && value
-            ? 'green'
-            : 'purple',
-        color: textColor,
+        backgroundColor: !list
+          ? 'black'
+          : list && correct
+          ? 'green'
+          : list && !correct && click
+          ? 'red'
+          : background,
+        color: 'white',
         width: width,
         height: height ? height : '5rem',
         '&:hover': {
@@ -68,7 +69,7 @@ const CustomButton: React.FC<PropTypes> = ({
   }))
 
   const classes = useStyles()
-  console.log(correct)
+
   return (
     <Grid item>
       <Button
